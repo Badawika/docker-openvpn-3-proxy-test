@@ -1,10 +1,13 @@
-FROM debian:bullseye
+FROM ubuntu:jammy
 
-RUN apt-get update && apt-get install -y \
+RUN apt update && apt install -y \
     gettext \
     nginx \
     openvpn \ 
     privoxy \
+    curl \
+    nano \
+    useradd nginx
     runit
 
 COPY app /app
