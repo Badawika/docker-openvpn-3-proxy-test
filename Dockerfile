@@ -7,8 +7,9 @@ RUN apt update && apt install -y \
     privoxy \
     curl \
     nano \
-    useradd nginx
     runit
+    useradd nginx
+    
 
 COPY app /app
 
