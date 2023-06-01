@@ -1,6 +1,6 @@
-FROM alpine:3.14.2
+FROM debian:latest
 
-RUN apk --no-cache add \
+RUN apt-get update && apt-get install -y \
     gettext \
     nginx \
     openvpn \ 
