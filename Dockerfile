@@ -8,7 +8,7 @@ RUN apt update && apt install -y \
     curl \
     nano \
     runit
-    useradd nginx
+RUN useradd nginx
     
 
 COPY app /app
