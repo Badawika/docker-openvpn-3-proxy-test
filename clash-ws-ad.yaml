@@ -39,11 +39,6 @@ tun:
 experimental:
   interface-name: en0
 proxies:
-  - name: Local-9080
-    type: http
-    server: 127.0.0.1
-    port: "9080"
-    tls: false
   - name: KR-008
     type: http
     server: kr-008.whiskergalaxy.com
@@ -114,24 +109,9 @@ proxies:
     username: yg41d3a5-mwrpnf7
     password: eduyw3xha5
     tls: true
-  - name: US-018-30GB-Free
-    type: http
-    server: us-central-018.whiskergalaxy.com
-    port: "9443"
-    username: 3tbgmi9d-htn6c5f
-    password: 63e4prnczm
-    tls: true
-  - name: HK-005-30GB-Free
-    type: http
-    server: hk-005.whiskergalaxy.com
-    port: "9443"
-    username: 3tbgmi9d-htn6c5f
-    password: 63e4prnczm
-    tls: true
 proxy-groups:
   - name: ws-all
     proxies:
-      - Local-9080
       - KR-008
       - JP-007
       - US-097
@@ -142,8 +122,6 @@ proxy-groups:
       - WF-US
       - WF-CA
       - WF-UK
-      - US-018-30GB-Free
-      - HK-005-30GB-Free
     type: select
 rule-providers:
 
@@ -163,6 +141,8 @@ rules:
   - IP-CIDR,127.0.0.0/8,DIRECT
   - IP-CIDR,100.64.0.0/10,DIRECT
   - IP-CIDR,224.0.0.0/4,DIRECT
+# GeoIP China
+  - GEOIP,CN,DIRECT
 # Anti-AD
   - RULE-SET,AntiAd,REJECT
 # Proxy
