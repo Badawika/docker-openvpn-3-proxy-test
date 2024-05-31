@@ -53,9 +53,9 @@ proxies:
     username: jcbi7fxr-2cudkz5
     password: d7wkup2zjf
     tls: true
-  - name: US-097
+  - name: US-018
     type: http
-    server: us-central-097.whiskergalaxy.com
+    server: us-central-018.whiskergalaxy.com
     port: "9443"
     username: jcbi7fxr-2cudkz5
     password: d7wkup2zjf
@@ -114,7 +114,7 @@ proxy-groups:
     proxies:
       - KR-008
       - JP-007
-      - US-097
+      - US-018
       - VN-002
       - KR-010
       - KR-009
