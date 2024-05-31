@@ -43,71 +43,71 @@ proxies:
     type: http
     server: kr-008.whiskergalaxy.com
     port: "9443"
-    username: yg41d3a5-mwrpnf7
-    password: eduyw3xha5
+    username: jcbi7fxr-2cudkz5
+    password: d7wkup2zjf
     tls: true
   - name: JP-007
     type: http
     server: jp-007.whiskergalaxy.com
     port: "9443"
-    username: yg41d3a5-mwrpnf7
-    password: eduyw3xha5
+    username: jcbi7fxr-2cudkz5
+    password: d7wkup2zjf
     tls: true
   - name: US-097
     type: http
     server: us-central-097.whiskergalaxy.com
     port: "9443"
-    username: yg41d3a5-mwrpnf7
-    password: eduyw3xha5
+    username: jcbi7fxr-2cudkz5
+    password: d7wkup2zjf
     tls: true
   - name: VN-002
     type: http
     server: vn-002.whiskergalaxy.com
     port: "9443"
-    username: yg41d3a5-mwrpnf7
-    password: eduyw3xha5
+    username: jcbi7fxr-2cudkz5
+    password: d7wkup2zjf
     tls: true
   - name: KR-010
     type: http
     server: kr-010.whiskergalaxy.com
     port: "9443"
-    username: yg41d3a5-mwrpnf7
-    password: eduyw3xha5
+    username: jcbi7fxr-2cudkz5
+    password: d7wkup2zjf
     tls: true
   - name: KR-009
     type: http
     server: kr-009.whiskergalaxy.com
     port: "9443"
-    username: yg41d3a5-mwrpnf7
-    password: eduyw3xha5
+    username: jcbi7fxr-2cudkz5
+    password: d7wkup2zjf
     tls: true
   - name: WF-JP
     type: http
     server: wf-jp-001.whiskergalaxy.com
     port: "9443"
-    username: yg41d3a5-mwrpnf7
-    password: eduyw3xha5
+    username: jcbi7fxr-2cudkz5
+    password: d7wkup2zjf
     tls: true
   - name: WF-US
     type: http
     server: wf-us-001.whiskergalaxy.com
     port: "9443"
-    username: yg41d3a5-mwrpnf7
-    password: eduyw3xha5
+    username: jcbi7fxr-2cudkz5
+    password: d7wkup2zjf
     tls: true
   - name: WF-CA
     type: http
     server: wf-ca-001.whiskergalaxy.com
     port: "9443"
-    username: yg41d3a5-mwrpnf7
-    password: eduyw3xha5
+    username: jcbi7fxr-2cudkz5
+    password: d7wkup2zjf
     tls: true
   - name: WF-UK
     type: http
     server: wf-uk-001.whiskergalaxy.com
     port: "9443"
-    username: yg41d3a5-mwrpnf7
-    password: eduyw3xha5
+    username: jcbi7fxr-2cudkz5
+    password: d7wkup2zjf
     tls: true
 proxy-groups:
   - name: ws-all
