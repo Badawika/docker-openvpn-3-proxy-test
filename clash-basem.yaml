@@ -1,0 +1,98 @@
+port: 7890
+socks-port: 7891
+redir-port: 7892
+mixed-port: 7893
+tproxy-port: 7894
+mode: rule
+log-level: silent
+allow-lan: true
+#external-controller: 0.0.0.0:9090
+#bind-address: "*"
+ipv6: true
+dns:
+  enable: true
+  ipv6: false
+  enhanced-mode: redir-host
+  listen: 0.0.0.0:7894
+  fallback-filter:
+    geoip: false
+    ipcidr:
+      - 240.0.0.0/4
+  nameserver:
+    - https://dns.google/dns-query
+    - tls://dns.google:853
+    - udp://8.8.8.8:53
+    - udp://8.8.8.8
+  fallback:
+    - udp://8.8.8.8:53
+    - tcp://8.8.8.8
+    - tcp://1.1.1.1
+    - 8.8.8.8
+    - 8.8.4.4
+tun:
+  enable: true
+  stack: system
+  macOS-auto-route: true
+  macOS-auto-detect-interface: true
+  dns-hijack:
+    - tcp://108.137.44.39:53
+experimental:
+  interface-name: en0
+proxies:
+  - name: US-018
+    type: http
+    server: us-central-018.whiskergalaxy.com
+    port: "9443"
+    username: ofxah46b-hvrtcxq
+    password: ve347qxas6
+    tls: true
+  - name: HK-001
+    type: http
+    server: hk-001.whiskergalaxy.com
+    port: "9443"
+    username: ofxah46b-hvrtcxq
+    password: ve347qxas6
+    tls: true
+proxy-groups:
+  - name: ws-all
+    proxies:
+      - US-018
+      - HK-001
+    type: select
+rule-providers:
+
+  AntiAd:
+    type: http
+    behavior: classical
+    path: ./master/anti-ad-clash.yaml
+    url: https://raw.githubusercontent.com/privacy-protection-tools/anti-AD/master/anti-ad-clash.yaml
+    interval: 86400
+
+rules:
+
+# Local Area Network
+  - IP-CIDR,192.168.0.0/16,DIRECT
+  - IP-CIDR,10.0.0.0/8,DIRECT
+  - IP-CIDR,172.16.0.0/12,DIRECT
+  - IP-CIDR,127.0.0.0/8,DIRECT
+  - IP-CIDR,100.64.0.0/10,DIRECT
+  - IP-CIDR,224.0.0.0/4,DIRECT
+# > Apple
+  - DOMAIN-SUFFIX,aaplimg.com,DIRECT
+  - DOMAIN-SUFFIX,apple.co,DIRECT
+  - DOMAIN-SUFFIX,apple.com,DIRECT
+  - DOMAIN-SUFFIX,apple-cloudkit.com,DIRECT
+  - DOMAIN-SUFFIX,appstore.com,DIRECT
+  - DOMAIN-SUFFIX,cdn-apple.com,DIRECT
+  - DOMAIN-SUFFIX,crashlytics.com,DIRECT
+  - DOMAIN-SUFFIX,icloud.com,DIRECT
+  - DOMAIN-SUFFIX,icloud-content.com,DIRECT
+  - DOMAIN-SUFFIX,me.com,DIRECT
+  - DOMAIN-SUFFIX,mzstatic.com,DIRECT
+  - DOMAIN,www-cdn.icloud.com.akadns.net,DIRECT
+# GeoIP China
+  - GEOIP,CN,DIRECT
+# Anti-AD
+  - RULE-SET,AntiAd,REJECT
+# Proxy
+  - MATCH,ws-all
